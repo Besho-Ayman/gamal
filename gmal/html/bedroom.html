@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوضة النوم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ورشة جمال جميل للأثاث</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="bedroom.html">أوضة النوم</a></li>
+                <li><a href="kidsroom.html">أوضة الأطفال</a></li>
+                <li><a href="niche.html">النيش</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>أوضة النوم</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="../img/11.jpeg" alt="سرير أنيق">
+                <p>سرير مودرن فاخر بتصميم مريح</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../img/2.jpeg" alt="دولاب كبير">
+                <p>دولاب كبير بأبواب منزلقة أنيقة</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../img/33.jpg" alt="تسريحة كلاسيكية">
+                <p>تسريحة كلاسيكية بمرآة مزخرفة</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../img/4.jpeg" alt="تسريحة كلاسيكية">
+                <p>تسريحة كلاسيكية بمرآة مزخرفة</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../img/5.jpeg" alt="تسريحة كلاسيكية">
+                <p>تسريحة كلاسيكية بمرآة مزخرفة</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../img/6.jpeg" alt="تسريحة كلاسيكية">
+                <p>تسريحة كلاسيكية بمرآة مزخرفة</p>
+            </div>
+            <!-- تقدر تضيف هنا صور إضافية بنفس الشكل -->
+        </div>
+    </main>
+
+    <!-- JavaScript لفتح الصورة بالحجم الكامل عند الضغط -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.gallery-item img');
+
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = 0;
+                overlay.style.left = 0;
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.zIndex = 1000;
+                overlay.style.cursor = 'pointer';
+
+                const popupImg = document.createElement('img');
+                popupImg.src = this.src;
+                popupImg.style.maxWidth = '90%';
+                popupImg.style.maxHeight = '90%';
+                popupImg.style.borderRadius = '10px';
+                popupImg.style.boxShadow = '0 0 20px white';
+
+                overlay.appendChild(popupImg);
+                document.body.appendChild(overlay);
+
+                overlay.addEventListener('click', function() {
+                    overlay.remove();
+                });
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
