@@ -12,26 +12,6 @@ header {
     text-align: center;
 }
 
-/* أنيميشن دخول النافبار */
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-header {
-    background-color: #8B4513;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideDown 1s ease-out;
-}
 
 nav ul {
     list-style: none;
